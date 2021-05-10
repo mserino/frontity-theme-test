@@ -1,24 +1,20 @@
 import React from "react";
-import { connect, Global, css, styled, Head } from "frontity";
+import { connect, styled, Head } from "frontity";
 import Switch from "@frontity/components/switch";
 
 // Templates
-import List from '../templates/Archive/Archive';
-import Post from './post';
-import Page from './page';
+import Archive from './Archive/Archive';
+import Post from './Post/Post';
 import Home from './home';
-// import Destination from './destination';
 import Error from './error';
+// import Destination from './destination';
 
 // Components
 import Header from '../components/Header/Header';
 import Loading from './loading';
 
 // Global styles
-import styleVariables from '../styles/global/variables.css';
-import normalizeCss from '../styles/global/normalize.css';
-import globalStyles from '../styles/global/index.css';
-import gutenbergStyles from '../styles/gutenberg/style.css';
+import GlobalStyles from '../styles/GlobalStyles';
 
 const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
@@ -32,18 +28,15 @@ const Root = ({ state, actions }) => {
           content="Based on the Frontity step by step tutorial"
         />
       </Head>
-      <Global styles={css(normalizeCss)} />
-      <Global styles={css(styleVariables)} />
-      <Global styles={css(globalStyles)} />
-      <Global styles={css(gutenbergStyles)} />
+      <GlobalStyles />
       <Header />
       <Main>
         <Switch>
           <Loading when={ data.isFetching } />
           <Home when={ data.isHome } />
-          <List when={ data.isArchive } />
+          <Archive when={ data.isArchive } />
           <Post when={ data.isPost } />
-          <Page when={ data.isPage } />
+          <Post when={ data.isPage } />
           {/* <Destination when={ data.isDestinations } /> */}
           <Error when={ data.isError } />
         </Switch>
@@ -51,61 +44,6 @@ const Root = ({ state, actions }) => {
     </>
   )
 };
-
-
-// const globalStyles = css`
-//   :root {
-//     --brand: #5B3BE8;
-//     --black: #000000;
-//     --white: #ffffff;
-//     --bodycolor: #EAF6FF;
-//   }
-//   body {
-//     margin: 0;
-//     color:var(--bodycolor);
-//     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-//       "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-//     font-feature-settings: "kern";
-//     -webkit-font-smoothing: antialiased;
-//     min-height: -webkit-fill-available;
-//   }
-//   html {
-//     height: -webkit-fill-available;
-//   },
-//   a,
-//   a:visited {  
-//     text-decoration: none;
-//     &:hover {
-//       text-decoration: none;
-//     }
-//   }
-//   h1, h2, h3, h4, h5, h6 {
-//     color:var(--black);
-//   }
-//   p {
-//     line-height:24px;
-//     font-size:18px;
-//   }
-//   // #root {
-//   //   display:flex;
-//   //   flex-direction: column;
-//   //   height: auto;
-//   // }
-//   .container {
-//     max-width: 1200px;
-//     width:100%;
-//     margin: 0 auto;
-//     position: relative;
-//     padding-right: 15px;
-//     padding-left: 15px;
-//   }
-//   .section{
-//     padding: 34px 0;
-//     @media (min-width: 992px) {
-//       padding: 50px 0;
-//     }
-//   }
-// `;
 
 const Main = styled.main`
   max-width: 1260px;

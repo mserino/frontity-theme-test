@@ -30,7 +30,12 @@ const List = ({ state, actions, libraries }) => {
                   'archive__image': true,
                 }}
               />
-              <span className="archive__date -has-font-size-small">{formattedDate}</span>
+              <span className="archive__date -has-font-size-small">
+                {formattedDate}
+              </span>
+              <span className="archive__category -has-font-size-small">
+                {post.category}
+              </span>
               <Link link={post.link}>
                 {post.title.rendered}
               </Link>
