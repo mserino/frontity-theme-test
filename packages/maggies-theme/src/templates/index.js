@@ -1,15 +1,20 @@
 import React from "react";
 import { connect, Global, css, styled, Head } from "frontity";
 import Switch from "@frontity/components/switch";
-import List from './list/list';
+
+// Templates
+import List from '../templates/Archive/Archive';
 import Post from './post';
 import Page from './page';
-import Header from './header/header';
 import Home from './home';
 // import Destination from './destination';
-import Loading from './loading';
 import Error from './error';
 
+// Components
+import Header from '../components/Header/Header';
+import Loading from './loading';
+
+// Global styles
 import styleVariables from '../styles/global/variables.css';
 import normalizeCss from '../styles/global/normalize.css';
 import globalStyles from '../styles/global/index.css';

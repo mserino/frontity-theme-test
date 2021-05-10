@@ -1,4 +1,4 @@
-import Root from './components';
+import Root from './templates';
 import link from "@frontity/html2react/processors/link";
 
 export default {

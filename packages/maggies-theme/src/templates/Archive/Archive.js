@@ -3,7 +3,8 @@ import { connect } from 'frontity';
 import Link from "@frontity/components/link";
 import dayjs from 'dayjs';
 
-import Image from '../image/image';
+import Image from '../../components/Image/Image';
+import Pagination from '../../components/Pagination/Pagination';
 
 import styles from './styles';
 
@@ -39,28 +40,7 @@ const List = ({ state, actions, libraries }) => {
           )
         })}
       </div>
-      <div className="pagination">
-        {data.previous && (
-          <button
-            className="pagination__button"
-            onClick={() => {
-              actions.router.set(data.previous)
-            }}
-          >
-            Prev
-          </button>
-        )}
-        {data.next && (
-          <button
-            className="pagination__button"
-            onClick={() => {
-              actions.router.set(data.next)
-            }}
-          >
-            Next
-          </button>
-        )}
-      </div>
+      <Pagination />
     </div>
   );
 };
