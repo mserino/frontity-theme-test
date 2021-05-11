@@ -20,7 +20,12 @@ const variables = css`
     --color-background-main: var(--color-alice-blue);
     --color-background-focus: var(--color-grey-very-light);
 
+    --color-button-primary-text: var(--color-white);
+    --color-button-primary-bg: var(--color-st-patricks-blue);
+    --color-button-primary-bg-hover: var(--color-orange-web);
+
     --transition-time: .2s;
+    --border-radius: 3px;
 
     --max-width: 1260px;
 
@@ -60,8 +65,10 @@ const variables = css`
     /* Typography */
     --font-size-base: 16px;
     --line-height-base: 20px;
-    --font-size-small: 12px;
-    --line-height-small: 16px;
+    --font-size-small: 14px;
+    --line-height-small: 18px;
+    --font-size-smaller: 12px;
+    --line-height-smaller: 16px;
     --font-size-large: 20px;
     --line-height-large: 24px;
 

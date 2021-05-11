@@ -1,0 +1,31 @@
+.wp-block-media-text {
+  margin-bottom: var(--spacing-components);
+}
+
+.wp-block-columns {
+
+  & img {
+    height: auto;
+    object-fit: cover;
+    max-height: 200px;
+  }
+}
+
+.wp-block-button {
+
+  & a {
+    background-color: var(--color-button-primary-bg);
+    border-radius: var(--border-radius);
+    color: var(--color-button-primary-text);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-small);
+    padding: var(--spacing-padding);
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-button-primary-bg-hover);
+    }
+  }
+}

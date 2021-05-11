@@ -3,6 +3,7 @@ import { Global, css } from "frontity";
 
 import normalize from './config/normalize.css';
 import gutenberg from './gutenberg/style.css';
+import gutenbergCustom from './gutenberg/custom.css';
 
 import variables from './config/variables';
 import body from './global/body';
@@ -16,6 +17,7 @@ const GlobalStyles = () => {
       <Global styles={css(normalize)} />
       <Global styles={css(variables)} />
       <Global styles={css(gutenberg)} />
+      <Global styles={css(gutenbergCustom)} />
       <Global styles={css(typography)} />
       <Global styles={css(body)} />
       <Global styles={css(layout)} />

@@ -9,13 +9,15 @@ export default {
   state: {
     theme: {
       isUrlVisible: false,
+      menuOpen: false,
     },
   },
   actions: {
     theme: {
-      toggleUrl: ({ state }) => {
-        state.theme.isUrlVisible = !state.theme.isUrlVisible
-      },
+      // @TODO: implement mobile menu
+      // toggleMenu: ({ state }) => {
+      //   state.theme.isMenuOpen = !state.theme.isMenuOpen
+      // },
     },
   },
   libraries: {
